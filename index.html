@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Affordable Future Tutoring – K-12 Tutoring in Cincinnati</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a2b4a;
+    --navy-light: #233660;
+    --teal: #2a7fa5;
+    --teal-bright: #38a4d0;
+    --gold: #f0a500;
+    --cream: #f8f4ef;
+    --white: #ffffff;
+    --text-dark: #0f1e33;
+    --text-mid: #3a4f6a;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text-dark); overflow-x: hidden; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.1rem 5%;
+    background: rgba(26,43,74,0.97);
+    backdrop-filter: blur(8px);
+    border-bottom: 2px solid var(--gold);
+  }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.35rem; color: var(--white); }
+  .nav-logo span { color: var(--gold); }
+  nav ul { list-style: none; display: flex; gap: 2rem; }
+  nav ul a { text-decoration: none; color: rgba(255,255,255,0.82); font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+  nav ul a:hover { color: var(--gold); }
+  .nav-cta { background: var(--gold); color: var(--navy) !important; padding: 0.45rem 1.2rem; border-radius: 50px; font-weight: 700 !important; }
+  .nav-cta:hover { background: #ffc02e !important; color: var(--navy) !important; }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh;
+    background: linear-gradient(145deg, var(--navy) 0%, var(--navy-light) 55%, #1e4d72 100%);
+    display: flex; align-items: center;
+    padding: 7rem 5% 4rem;
+    position: relative; overflow: hidden;
+  }
+  #hero::before {
+    content: ''; position: absolute; top: -80px; right: -80px;
+    width: 550px; height: 550px;
+    background: radial-gradient(circle, rgba(56,164,208,0.18) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero-content { max-width: 620px; animation: fadeUp 0.8s ease both; }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(240,165,0,0.15); border: 1px solid var(--gold);
+    color: var(--gold); font-size: 0.78rem; font-weight: 600; letter-spacing: 1.5px;
+    text-transform: uppercase; padding: 0.35rem 0.9rem; border-radius: 50px; margin-bottom: 1.4rem;
+  }
+  .hero-content h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.8rem, 6vw, 4.2rem); color: var(--white); line-height: 1.1; margin-bottom: 1.2rem; }
+  .hero-content h1 em { font-style: normal; color: var(--teal-bright); }
+  .hero-content p { color: rgba(255,255,255,0.72); font-size: 1.05rem; line-height: 1.7; margin-bottom: 2rem; max-width: 500px; }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary { background: var(--gold); color: var(--navy); padding: 0.85rem 2rem; border-radius: 50px; font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; display: inline-block; }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(240,165,0,0.35); }
+  .btn-outline { background: transparent; color: var(--white); padding: 0.85rem 2rem; border-radius: 50px; font-weight: 600; font-size: 0.95rem; text-decoration: none; border: 2px solid rgba(255,255,255,0.35); transition: border-color 0.2s, background 0.2s; display: inline-block; }
+  .btn-outline:hover { border-color: var(--teal-bright); background: rgba(56,164,208,0.1); }
+  .hero-stats { display: flex; gap: 2.5rem; margin-top: 3rem; animation: fadeUp 0.8s 0.2s ease both; }
+  .stat-num { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--gold); font-weight: 700; line-height: 1; }
+  .stat-label { font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-top: 0.2rem; }
+
+  /* SHARED */
+  section { padding: 5.5rem 5%; }
+  .section-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--teal); margin-bottom: 0.6rem; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.9rem, 4vw, 2.8rem); color: var(--navy); line-height: 1.2; margin-bottom: 1rem; }
+  .section-sub { color: var(--text-mid); font-size: 1rem; line-height: 1.7; max-width: 540px; margin-bottom: 3rem; }
+
+  /* WHY */
+  #why { background: var(--white); }
+  .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+  .why-card { background: var(--cream); border-radius: 16px; padding: 2rem; border: 1.5px solid rgba(26,43,74,0.08); transition: transform 0.25s, box-shadow 0.25s; }
+  .why-card:hover { transform: translateY(-5px); box-shadow: 0 12px 32px rgba(26,43,74,0.1); }
+  .why-icon { width: 48px; height: 48px; background: var(--navy); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 1.2rem; }
+  .why-card h3 { font-size: 1.05rem; font-weight: 600; color: var(--navy); margin-bottom: 0.5rem; }
+  .why-card p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.6; }
+
+  /* PRICING */
+  #pricing { background: var(--cream); }
+  .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.5rem; max-width: 950px; }
+  .price-card { background: var(--white); border-radius: 20px; padding: 2.2rem; border: 2px solid rgba(26,43,74,0.08); position: relative; transition: transform 0.25s, box-shadow 0.25s; }
+  .price-card:hover { transform: translateY(-5px); box-shadow: 0 14px 36px rgba(26,43,74,0.1); }
+  .price-card.featured { background: linear-gradient(160deg, var(--navy) 0%, var(--navy-light) 100%); border-color: var(--gold); }
+  .featured-badge { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: var(--gold); color: var(--navy); font-size: 0.7rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 0.25rem 0.9rem; border-radius: 50px; white-space: nowrap; }
+  .plan-name { font-size: 0.78rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--teal); margin-bottom: 0.6rem; }
+  .price-card.featured .plan-name { color: var(--teal-bright); }
+  .plan-price { font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 900; color: var(--navy); line-height: 1; }
+  .price-card.featured .plan-price { color: var(--gold); }
+  .plan-price sup { font-size: 1.2rem; vertical-align: super; }
+  .plan-price small { font-size: 0.9rem; font-weight: 400; opacity: 0.55; font-family: 'DM Sans', sans-serif; }
+  .plan-desc { font-size: 0.88rem; color: var(--text-mid); margin: 0.6rem 0 1.4rem; line-height: 1.55; }
+  .price-card.featured .plan-desc { color: rgba(255,255,255,0.65); }
+  .plan-features { list-style: none; margin-bottom: 1.8rem; }
+  .plan-features li { font-size: 0.88rem; color: var(--text-mid); padding: 0.45rem 0; display: flex; align-items: center; gap: 0.6rem; border-top: 1px solid rgba(26,43,74,0.06); }
+  .price-card.featured .plan-features li { color: rgba(255,255,255,0.8); border-color: rgba(255,255,255,0.1); }
+  .chk { color: var(--teal-bright); font-weight: 700; }
+  .price-card.featured .chk { color: var(--gold); }
+  .plan-btn { display: block; text-align: center; background: var(--navy); color: var(--white); padding: 0.75rem; border-radius: 50px; font-weight: 600; font-size: 0.9rem; text-decoration: none; transition: background 0.2s, transform 0.2s; }
+  .plan-btn:hover { background: var(--teal); transform: translateY(-1px); }
+  .price-card.featured .plan-btn { background: var(--gold); color: var(--navy); }
+  .price-card.featured .plan-btn:hover { background: #ffc02e; }
+  .aid-note { margin-top: 2.5rem; background: rgba(42,127,165,0.08); border-left: 4px solid var(--teal); border-radius: 0 12px 12px 0; padding: 1.1rem 1.4rem; max-width: 950px; }
+  .aid-note p { font-size: 0.92rem; color: var(--text-mid); line-height: 1.6; }
+  .aid-note strong { color: var(--navy); }
+
+  /* HOW */
+  #how { background: var(--white); }
+  .steps { display: flex; flex-direction: column; gap: 0; max-width: 600px; }
+  .step { display: flex; gap: 1.5rem; padding-bottom: 2.5rem; position: relative; }
+  .step:not(:last-child)::before { content: ''; position: absolute; left: 22px; top: 48px; width: 2px; bottom: 0; background: linear-gradient(to bottom, var(--teal), rgba(42,127,165,0.1)); }
+  .step-num { flex-shrink: 0; width: 46px; height: 46px; background: var(--navy); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; }
+  .step-content h3 { font-size: 1.05rem; font-weight: 600; color: var(--navy); margin-bottom: 0.35rem; }
+  .step-content p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.6; }
+
+  /* CONTACT */
+  #contact { background: linear-gradient(145deg, var(--navy) 0%, var(--navy-light) 100%); color: var(--white); text-align: center; }
+  #contact .section-label { color: var(--teal-bright); }
+  #contact .section-title { color: var(--white); }
+  #contact .section-sub { color: rgba(255,255,255,0.65); margin: 0 auto 2.5rem; }
+  .contact-cards { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2.5rem; }
+  .contact-card { background: rgba(255,255,255,0.06); border: 1.5px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 1.5rem 2rem; min-width: 200px; transition: background 0.2s; }
+  .contact-card:hover { background: rgba(255,255,255,0.1); }
+  .contact-card .ci { font-size: 1.6rem; margin-bottom: 0.5rem; }
+  .contact-card .cl { font-size: 0.72rem; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 0.3rem; }
+  .contact-card .cv { font-size: 1rem; font-weight: 600; color: var(--white); }
+  .contact-card a { color: var(--gold); text-decoration: none; }
+  .contact-card a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { background: #0f1e33; color: rgba(255,255,255,0.4); text-align: center; padding: 1.5rem 5%; font-size: 0.82rem; }
+  footer strong { color: rgba(255,255,255,0.7); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @media (max-width: 640px) {
+    nav ul { display: none; }
+    .hero-stats { gap: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Affordable<span>Future</span> Tutoring</div>
+  <ul>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdiyfR9CzfmkzsYEVfN5c9FkZGN1g1al5nWUepOIylLSQ5naA/viewform?usp=sharing&ouid=100591138696820201786" target="_blank" class="nav-cta">Book Free Session</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-content">
+    <div class="hero-badge">K–12 · Cincinnati · Remote Available</div>
+    <h1>Learning Made <em>Personal.</em> Results Made Real.</h1>
+    <p>Affordable Future Tutoring pairs K–12 students with experienced tutors who meet you where you are — in person in Cincinnati or online, on your schedule.</p>
+    <div class="hero-actions">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdiyfR9CzfmkzsYEVfN5c9FkZGN1g1al5nWUepOIylLSQ5naA/viewform?usp=sharing&ouid=100591138696820201786" target="_blank" class="btn-primary">Book a Free Session →</a>
+      <a href="#pricing" class="btn-outline">See Pricing</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num">K–12</div>
+        <div class="stat-label">All grade levels</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">Free</div>
+        <div class="stat-label">First session, always</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">$20</div>
+        <div class="stat-label">Base hourly rate</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="section-label">Why Us</div>
+  <h2 class="section-title">Tutoring That Actually Works</h2>
+  <p class="section-sub">We build confidence and skills — not just grades. Here's what sets us apart.</p>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-icon">💰</div>
+      <h3>Flexible & Affordable</h3>
+      <p>Our base rate is $20/hr with a free first session for everyone. If your family needs financial assistance, rates can go as low as completely free.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🎓</div>
+      <h3>Experienced Tutors</h3>
+      <p>Our tutors bring real experience across all K–12 subjects and grade levels — and a genuine commitment to student growth.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🧭</div>
+      <h3>Personalized Learning</h3>
+      <p>No cookie-cutter lessons. Every student gets a plan tailored to their learning style, pace, and goals.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">📍</div>
+      <h3>Flexible Options</h3>
+      <p>Based in Cincinnati with remote sessions available — we meet you wherever is most convenient for your family.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="section-label">Pricing</div>
+  <h2 class="section-title">Simple, Honest Pricing</h2>
+  <p class="section-sub">We believe cost should never be a barrier to great education. Every family gets a free first session — always.</p>
+  <div class="pricing-grid">
+
+    <div class="price-card">
+      <div class="plan-name">Free Trial</div>
+      <div class="plan-price">$0</div>
+      <div class="plan-desc">Your very first session is always on us — no strings attached, no commitment required.</div>
+      <ul class="plan-features">
+        <li><span class="chk">✓</span> 1 full tutoring session</li>
+        <li><span class="chk">✓</span> Any subject, any grade</li>
+        <li><span class="chk">✓</span> In-person or remote</li>
+        <li><span class="chk">✓</span> No credit card needed</li>
+      </ul>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdiyfR9CzfmkzsYEVfN5c9FkZGN1g1al5nWUepOIylLSQ5naA/viewform?usp=sharing&ouid=100591138696820201786" target="_blank" class="plan-btn">Get Started Free</a>
+    </div>
+
+    <div class="price-card featured">
+      <div class="featured-badge">Standard Rate</div>
+      <div class="plan-name">Regular Sessions</div>
+      <div class="plan-price"><sup>$</sup>20<small>/hr</small></div>
+      <div class="plan-desc">Our base hourly rate for ongoing 1-on-1 sessions — personalized to your student's needs and schedule.</div>
+      <ul class="plan-features">
+        <li><span class="chk">✓</span> All K–12 subjects</li>
+        <li><span class="chk">✓</span> Personalized lesson plans</li>
+        <li><span class="chk">✓</span> Flexible scheduling</li>
+        <li><span class="chk">✓</span> Remote or in-person</li>
+      </ul>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdiyfR9CzfmkzsYEVfN5c9FkZGN1g1al5nWUepOIylLSQ5naA/viewform?usp=sharing&ouid=100591138696820201786" target="_blank" class="plan-btn">Book a Session</a>
+    </div>
+
+    <div class="price-card">
+      <div class="plan-name">Financial Assistance</div>
+      <div class="plan-price" style="font-size:1.6rem;color:var(--teal);font-weight:700;font-family:'DM Sans',sans-serif;">Reduced Rate</div>
+      <div class="plan-desc">Need help with cost? Rates can go below $20/hr — all the way down to free. No one is ever turned away due to finances.</div>
+      <ul class="plan-features">
+        <li><span class="chk">✓</span> Sliding scale pricing</li>
+        <li><span class="chk">✓</span> Can be as low as $0</li>
+        <li><span class="chk">✓</span> Same quality sessions</li>
+        <li><span class="chk">✓</span> Handled confidentially</li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="aid-note">
+    <p>💡 <strong>Need financial assistance?</strong> Just mention it when you sign up — we handle all requests with care and confidentiality. Every student deserves great tutoring, regardless of financial situation.</p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="section-label">How It Works</div>
+  <h2 class="section-title">Three Simple Steps</h2>
+  <p class="section-sub">Getting started is easy — and your first session is always free.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h3>Sign Up Online</h3>
+        <p>Fill out our quick sign-up form. Tell us the subject, grade level, and whether you're in Cincinnati or need a remote session.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h3>We'll Reach Out</h3>
+        <p>We'll contact you at <strong>(513) 282-5898</strong> to confirm your free first session and match you with the right tutor.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h3>Start Learning</h3>
+        <p>Enjoy your first session completely free. Continue at $20/hr — or discuss a reduced rate if you need it. No pressure, ever.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">Get In Touch</div>
+  <h2 class="section-title">Ready to Take the First Step?</h2>
+  <p class="section-sub">Sign up online or text us directly — your first session is always free.</p>
+  <div class="contact-cards">
+    <div class="contact-card">
+      <div class="ci">📝</div>
+      <div class="cl">Sign Up</div>
+      <div class="cv"><a href="https://docs.google.com/forms/d/e/1FAIpQLSdiyfR9CzfmkzsYEVfN5c9FkZGN1g1al5nWUepOIylLSQ5naA/viewform?usp=sharing&ouid=100591138696820201786" target="_blank">Fill Out Our Form →</a></div>
+    </div>
+    <div class="contact-card">
+      <div class="ci">📱</div>
+      <div class="cl">Text or Call</div>
+      <div class="cv"><a href="tel:5132825898">(513) 282-5898</a></div>
+    </div>
+    <div class="contact-card">
+      <div class="ci">📍</div>
+      <div class="cl">Location</div>
+      <div class="cv">Cincinnati, OH<br><small style="opacity:0.6;font-size:0.85rem;">Remote also available</small></div>
+    </div>
+  </div>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdiyfR9CzfmkzsYEVfN5c9FkZGN1g1al5nWUepOIylLSQ5naA/viewform?usp=sharing&ouid=100591138696820201786" target="_blank" class="btn-primary" style="font-size:1rem;padding:1rem 2.5rem;">📝 Book Your Free Session Now</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <strong>Affordable Future Tutoring</strong> · Cincinnati, OH · <a href="tel:5132825898" style="color:var(--gold);text-decoration:none;">(513) 282-5898</a>
+</footer>
+
+</body>
+</html>
