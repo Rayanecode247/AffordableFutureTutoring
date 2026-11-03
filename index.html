@@ -89,7 +89,7 @@
 
   /* PRICING */
   #pricing { background: var(--cream); }
-  .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.5rem; max-width: 950px; }
+  .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.5rem; max-width: 700px; }
   .price-card { background: var(--white); border-radius: 20px; padding: 2.2rem; border: 2px solid rgba(26,43,74,0.08); position: relative; transition: transform 0.25s, box-shadow 0.25s; }
   .price-card:hover { transform: translateY(-5px); box-shadow: 0 14px 36px rgba(26,43,74,0.1); }
   .price-card.featured { background: linear-gradient(160deg, var(--navy) 0%, var(--navy-light) 100%); border-color: var(--gold); }
@@ -111,7 +111,7 @@
   .plan-btn:hover { background: var(--teal); transform: translateY(-1px); }
   .price-card.featured .plan-btn { background: var(--gold); color: var(--navy); }
   .price-card.featured .plan-btn:hover { background: #ffc02e; }
-  .aid-note { margin-top: 2.5rem; background: rgba(42,127,165,0.08); border-left: 4px solid var(--teal); border-radius: 0 12px 12px 0; padding: 1.1rem 1.4rem; max-width: 950px; }
+  .aid-note { margin-top: 2.5rem; background: rgba(42,127,165,0.08); border-left: 4px solid var(--teal); border-radius: 0 12px 12px 0; padding: 1.1rem 1.4rem; max-width: 700px; }
   .aid-note p { font-size: 0.92rem; color: var(--text-mid); line-height: 1.6; }
   .aid-note strong { color: var(--navy); }
 
@@ -126,7 +126,7 @@
 
   /* REVIEWS */
   #reviews { background: var(--cream); }
-  .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; max-width: 960px; }
+  .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 1.5rem; max-width: 960px; }
   .review-card {
     background: var(--white);
     border-radius: 18px;
@@ -216,11 +216,11 @@
       </div>
       <div class="stat">
         <div class="stat-num">Free</div>
-        <div class="stat-label">First session, always</div>
+        <div class="stat-label">First session on us</div>
       </div>
       <div class="stat">
-        <div class="stat-num">$20</div>
-        <div class="stat-label">Base hourly rate</div>
+        <div class="stat-num">$0</div>
+        <div class="stat-label">Rates can go as low as free</div>
       </div>
     </div>
   </div>
@@ -235,7 +235,7 @@
     <div class="why-card">
       <div class="why-icon">💰</div>
       <h3>Flexible & Affordable</h3>
-      <p>Our base rate is $20/hr with a free first session for everyone. If your family needs financial assistance, rates can go as low as completely free.</p>
+      <p>We work with what your family can afford. Cost should never be the reason a student goes without help.</p>
     </div>
     <div class="why-card">
       <div class="why-icon">🎓</div>
@@ -285,10 +285,10 @@
     </div>
 
     <div class="price-card featured">
-      <div class="featured-badge">Standard Rate</div>
-      <div class="plan-name">Regular Sessions</div>
-      <div class="plan-price"><sup>$</sup>20<small>/hr</small></div>
-      <div class="plan-desc">Our base hourly rate. Ongoing 1-on-1 sessions, personalized to your student's needs and schedule.</div>
+      <div class="featured-badge">Ongoing Sessions</div>
+      <div class="plan-name">Regular Tutoring</div>
+      <div class="plan-price"><span style="font-size:1rem;font-family:'DM Sans',sans-serif;font-weight:600;display:block;margin-bottom:0.2rem;opacity:0.8;">As low as</span>$0<small>/hr</small></div>
+      <div class="plan-desc">Rates are based on what works for your family and can go all the way down to free. We never turn a student away because of finances.</div>
       <ul class="plan-features">
         <li><span class="chk">✓</span> All K–12 subjects</li>
         <li><span class="chk">✓</span> Personalized lesson plans</li>
@@ -298,21 +298,9 @@
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSdiyfR9CzfmkzsYEVfN5c9FkZGN1g1al5nWUepOIylLSQ5naA/viewform?usp=sharing&ouid=100591138696820201786" target="_blank" class="plan-btn">Book a Session</a>
     </div>
 
-    <div class="price-card">
-      <div class="plan-name">Financial Assistance</div>
-      <div class="plan-price" style="font-size:1.6rem;color:var(--teal);font-weight:700;font-family:'DM Sans',sans-serif;">Reduced Rate</div>
-      <div class="plan-desc">Need help with cost? Rates can go below $20/hr — all the way to free. We never turn a student away because of finances.</div>
-      <ul class="plan-features">
-        <li><span class="chk">✓</span> Sliding scale pricing</li>
-        <li><span class="chk">✓</span> Can be as low as $0</li>
-        <li><span class="chk">✓</span> Same quality sessions</li>
-        <li><span class="chk">✓</span> Handled confidentially</li>
-      </ul>
-    </div>
-
   </div>
   <div class="aid-note">
-    <p>💡 <strong>Need financial assistance?</strong> Just mention it when you sign up — we handle all requests with care and confidentiality. Every student deserves great tutoring, regardless of financial situation.</p>
+    <p>💡 <strong>Need a reduced rate?</strong> Just mention it when you sign up. We handle every request with care and confidentiality.</p>
   </div>
 </section>
 
@@ -320,7 +308,7 @@
 <section id="how">
   <div class="section-label">How It Works</div>
   <h2 class="section-title">Getting started is easy</h2>
-  <p class="section-sub">Three steps — and your first session is always free.</p>
+  <p class="section-sub">Three quick steps.</p>
   <div class="steps">
     <div class="step">
       <div class="step-num">1</div>
@@ -333,14 +321,14 @@
       <div class="step-num">2</div>
       <div class="step-content">
         <h3>We'll reach out</h3>
-        <p>We'll contact you at <strong>513-282-5898</strong> to confirm your free first session and get you matched up.</p>
+        <p>We'll contact you at <strong>513-282-5898</strong> to confirm your first session and get you matched up.</p>
       </div>
     </div>
     <div class="step">
       <div class="step-num">3</div>
       <div class="step-content">
         <h3>Start learning</h3>
-        <p>First session is free, no matter what. After that, continue at $20/hr — or let us know if you need a reduced rate. No pressure, ever.</p>
+        <p>Your first session is free, no matter what. If it's a good fit, we'll sort out a rate that works for you. No pressure, ever.</p>
       </div>
     </div>
   </div>
@@ -366,7 +354,7 @@
     </div>
 
     <div class="review-card">
-      <div class="review-stars">★★★★<span style="background:linear-gradient(90deg,var(--gold) 50%,#d4c5a9 50%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">★</span></div>
+      <div class="review-stars">★★★★★</div>
       <p class="review-text" style="font-size:0.88rem;">The free first session made it a no-brainer to try. Tutoring was good and scheduling was easy.</p>
       <div class="review-author">
         <div class="review-avatar">—</div>
@@ -378,13 +366,25 @@
     </div>
 
     <div class="review-card">
-      <div class="review-stars">★★★★★</div>
+      <div class="review-stars">★★★★<span style="background:linear-gradient(90deg,var(--gold) 50%,#d4c5a9 50%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">★</span></div>
       <p class="review-text" style="font-size:0.88rem;">Really helpful tutoring. Scheduling was straightforward and the free first session made it easy to get started.</p>
       <div class="review-author">
         <div class="review-avatar">—</div>
         <div>
           <div class="review-name">Anonymous</div>
           <div class="review-role">11th grader</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text" style="font-size:0.88rem;">All of the tutors have been great, and they're super flexible with payments.</p>
+      <div class="review-author">
+        <div class="review-avatar">—</div>
+        <div>
+          <div class="review-name">Anonymous</div>
+          <div class="review-role">Parent of an 8th grader and 6th grader</div>
         </div>
       </div>
     </div>
@@ -396,7 +396,7 @@
 <section id="contact">
   <div class="section-label">Get In Touch</div>
   <h2 class="section-title">Ready to take the first step?</h2>
-  <p class="section-sub">Sign up online or text us directly — your first session is always free.</p>
+  <p class="section-sub">Sign up online or text us directly. We'll take it from there.</p>
   <div class="contact-cards">
     <div class="contact-card">
       <div class="ci">📝</div>
@@ -406,7 +406,7 @@
     <div class="contact-card">
       <div class="ci">📱</div>
       <div class="cl">Text or Call</div>
-      <div class="cv"><a href="tel:5132825898">513-282-5898</a></div>
+      <div class="cv"><a href="tel:[5132825898]">513-282-5898</a></div>
     </div>
     <div class="contact-card">
       <div class="ci">📍</div>
@@ -419,7 +419,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <strong>Affordable Future Tutoring</strong> · Cincinnati, OH · <a href="tel:5132825898" style="color:var(--gold);text-decoration:none;">513-282-5898</a>
+  <strong>Affordable Future Tutoring</strong> · Cincinnati, OH · <a href="tel:[5132825898]" style="color:var(--gold);text-decoration:none;">513-282-5898</a>
 </footer>
 
 </body>
